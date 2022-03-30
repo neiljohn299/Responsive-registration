@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-item">
+            <a href="#" class="back"><i class="fa fa-arrow-left" style="font-size:24px;"></i> Back</a>
+            <div class="heading">
+                <h3>Start from free</h3>
+                <h1>Create an account</h1>
+                <button class="button"><i class="fa fa-google" style="font-size:24px;color:#3C71FF;"></i>&emsp;Sign up with Google</button>
+                <button class="button"><i class="fa fa-facebook-f" style="font-size:24px;color:#3C71FF;"></i>&emsp;Sign up with Facebook</button>
+            </div>
+            <div class="form-field-span">
+                <p>Or use your email for registration</p>
+            </div>
+        </div>
+        <div class="login-item">
+          <form action="" method="post" class="form form-login">
+            <div class="form-field-inline">
+                <input id="login-username" type="text" class="form-input" placeholder="First Name" required>
+                <input id="login-username" type="text" class="form-input" placeholder="Last Name" required>
+            </div>
+
+            <div class="form-field">
+              <input id="login-username" type="email" class="form-input" placeholder="E-mail" required>
+            </div>
+            <div class="form-field">
+                <input type="password" name="password" id="password" class="form-input" placeholder="Password" pattern="(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                <i class="fa fa-eye eye-icon" style="font-size:25px; color: #000000;" id="togglePassword"></i>
+              </div>
+            <div class="form-field-checkbox">
+                <input type="checkbox" id="privacy">
+                <label for="privacy"> By creating account, you agree to accept our Privacy Policy, Terms of Service and Notification settings.</label>
+              </div>
+            <div class="form-field">
+              <input type="submit" value="Create an Free Account!">
+            </div>
+            <div class="form-field-login">
+              <p>Already have an account? <a href="#">Log In</a></p>>
+            </div>
+          </form>
+        </div>
+    </div>
+</body>
+<script>
+    const togglePassword = document.querySelector("#togglePassword");
+    const password = document.querySelector("#password");
+
+    togglePassword.addEventListener("click", function () {
+        // toggle the type attribute
+        const type = password.getAttribute("type") === "password" ? "text" : "password";
+        password.setAttribute("type", type);
+        
+        // toggle the icon
+        this.classList.toggle("fa-eye-slash");
+    });
+
+    // prevent form submit
+    const form = document.querySelector("form");
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+    });
+</script>
+
+<script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
+    togglePassword.addEventListener('click', function (e) {
+        // toggle the type attribute
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        // toggle the eye / eye slash icon
+        this.classList.toggle('fa-eye-slash');
+    });
+</script>   
+</html>
